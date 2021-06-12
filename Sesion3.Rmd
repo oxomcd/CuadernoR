@@ -1,0 +1,72 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+3==(2+1)
+"intermediate" == "r"
+TRUE != FALSE
+"Rchitect" != "rchitect"
+
+```
+Greater and less than 
+```{r}
+-6*5+2 >= -10+1
+"raining" <= "table"
+TRUE>FALSE
+```
+COMPARE VECTORS
+
+
+THE IF STATEMENT
+
+```{r}
+medium <- "facebook"
+num_views <-14
+if(medium == "Linkedin"){
+  print("showing linkedin info")
+  }else{
+  print("unknown medium")}
+if(num_views > 15){
+  print("Youre popular")
+}else{
+  print("Try to be more visible")
+}
+
+```
+
+costomize further : else if
+```{r}
+
+if(medium == "Linkedin"){
+  print("showing linkedin information")
+}else if (medium =="facebook"){
+  print("show facebook information")
+}else {
+  print("unknown medium")
+}
+
+```
+else if 2.0
+
+```{r}
+number <- 6
+result<-""
+if (number<10){
+  if(number<5){
+    result <- "extra small"
+  }else{
+    result <-"small"
+  }
+  }
+
+  else if(number<100){
+    result <- "medium"
+  }
+  else{
+    result<-"large"
+  }
+
+print(result)
+```
+
