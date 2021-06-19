@@ -1,0 +1,83 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+.
+FUNCIONES
+
+```{r}
+Pow_two <- function (x, print_info= TRUE){
+  y <- x^2
+  if(print_info){
+    print(paste(x,"to the power of two equals ",y))
+  }
+  return (y)
+}
+
+result <- Pow_two(3)
+result # las variables dentro de la funcion no son globales
+  
+```
+R passes arguments by value
+```{r}
+triple <- function(x){
+  x <- 3*x
+  x
+}
+a <- 5
+triple(a)
+a
+```
+```{r}
+linkedin <- c(16,9,13,5,2,17,14)
+interpret <- function(num_views){
+  if(num_views >15){
+    print("Youre Popular")
+    return(num_views)
+  }
+  else{
+    print("Try to be more visible")
+    return(0)
+  }
+}
+interpret(linkedin[1])
+
+interpret_all <- function(views, return_sum=TRUE){
+  count <- 0
+  for(v in views){
+    count <- count + interpret(v)
+  }
+  if(return_sum){
+    return(count)
+    
+  }else{
+    return(NULL)
+  }
+}
+interpret_all(linkedin)
+```
+Load an R Package
+```{r}
+library(ggplot2)
+
+qplot(mtcars$wt, mtcars$hp)
+```
+LAPPLY()
+posiciones con doble corchete, referencia para una lista
+
+```{r}
+temp <- list(c(3,7,9,6,1), c(6,9,12,13,5), c(4,8,3,-1,-3), c(1,4,7,2,-2), c(5,7,9,4,2), c(-3,5,8,9,4), c(3,6,9,4,1))
+select <- function(x){
+  print( mean(x))
+}
+lapply(temp,min)
+
+list <- lapply(temp,select)
+list
+for(t in temp){
+  print(min(t))
+}
+
+```
+
+
