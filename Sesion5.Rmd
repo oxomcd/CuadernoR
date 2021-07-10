@@ -87,9 +87,19 @@ ggplot(gapminder_1952, aes (x=pop, y=gdpPercap))+
 
 ```
 ```{r}
-ggplot(gapminder_1952, aes (x=pop, y=lifeExp, color=continent))+
+gapminder_1952
+ggplot(gapminder_1952, aes(x=pop, y=lifeExp))+
   geom_point()+
-  scale_x_log10()
+  scale_x_log10()+
+  facet_wrap(~ continent)
+
+```
+```{r}
+gapminder_1952
+ggplot(gapminder, aes(x=gdpPercap, y=lifeExp))+
+  geom_point()+
+  scale_x_log10()+
+  facet_wrap(~ year)
 
 ```
 
