@@ -6,7 +6,7 @@ output: html_notebook
 
 ```{r}
 library(tidyverse)
-
+library(ggplot2)
 sets <- read_csv('sets.csv')
 themes <- read_csv('themes.csv')
 parts <- read_csv('parts.csv')
@@ -85,6 +85,21 @@ themes
 
 sets%>%
   inner_join(themes, by = c("theme_id" = "id"))
+```
+```{r}
+
+view(parts)
+view(part_categories)
+
+view_parts <- parts %>%
+  inner_join(part_categories,by= c("part_cat_id"="id"))
+
+view(view_parts)
+
+view_parts <- parts %>%
+  inner_join(part_categories,by= c("part_cat_id"="id"), suffix=c("_parts","_parts_categories"))
+
+view(view_parts)
 ```
 
 
